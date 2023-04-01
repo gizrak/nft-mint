@@ -2,7 +2,7 @@
 
 > Mint NFT
 
-[![CI](https://github.com/gizrak/nft-mint/actions/workflows/CI.yml/badge.svg)](https://github.com/gizrak/nft-mint/actions/workflows/CI.yml)
+[![CI](https://github.com/gizrak/nft-mint/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/gizrak/nft-mint/actions/workflows/CI.yml)
 
 ## Getting Started
 
