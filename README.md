@@ -22,20 +22,7 @@ vi .env
 npm install
 ```
 
-Compile [smart contract files](./contracts/) and output would be generated in `./artifacts`.
-
-```bash
-$ npm run sol:compile
-
-> nft-mint@1.0.0 sol:compile
-> npx hardhat compile
-
-Generating typings for: 15 artifacts in dir: typechain-types for target: ethers-v5
-Successfully generated 23 typings!
-Compiled 15 Solidity files successfully
-```
-
-Deploy smart contracts to blockchain.
+Compile smart contract and deploy it into blockchain.
 
 - Blockchain network is decided by what you written in `.env` file.
 - Dev environments are available. ([ETH](https://github.com/eth-clients/goerli), [POL](https://mumbai.polygonscan.com/))
@@ -46,8 +33,10 @@ $ npm run init
 > nft-mint@1.0.0 init
 > npx hardhat compile; npx ts-node ./src/cmd/contract.ts
 
-Nothing to compile
-No need to generate any newer typings.
+Generating typings for: 15 artifacts in dir: typechain-types for target: ethers-v5
+Successfully generated 23 typings!
+Compiled 15 Solidity files successfully
+
 Stored contract is ETH MyNFT 0x90150279923866cA64754c406b6FD4a728702c21
 Stored contract is MATIC MyNFT 0x24150a728702c212766cA64759924c406D438b6F
 ```
@@ -65,7 +54,7 @@ Mint the image using IPFS CID.
 $ npm run mint matic bafkreibygvrdj4nf7ghhl7eubirhq5jr5zjxyhzojffrqae62hd4s62rsy
 
 > nft-mint@1.0.0 nft:mint
-> npx ts-node ./cmd/nft.mint.ts "matic" "bafkreibygvrdj4nf7ghhl7eubirhq5jr5zjxyhzojffrqae62hd4s62rsy"
+> npx ts-node ./src/cmd/nft.mint.ts "matic" "bafkreibygvrdj4nf7ghhl7eubirhq5jr5zjxyhzojffrqae62hd4s62rsy"
 
 NFT minted! contractAddress: 0x24150a728702c212766cA64759924c406D438b6F, tokenId: 8
 ```
@@ -76,7 +65,7 @@ Get NFT mint info using tokenId which is retrieved when minted.
 $ npm run get matic 8
 
 > nft-mint@1.0.0 nft:get
-> npx ts-node ./cmd/nft.get.ts "matic" "8"
+> npx ts-node ./src/cmd/nft.get.ts "matic" "8"
 
 {
   contract: {
